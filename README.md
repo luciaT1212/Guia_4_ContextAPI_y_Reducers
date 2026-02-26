@@ -1,16 +1,40 @@
-# React + Vite
+#  Planificador de Gastos  
+## Guía 4 – Context API y useReducer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación desarrollada con **React + Vite** utilizando **Context API** y **useReducer** para la gestión global del estado.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
 
-## React Compiler
+- Definir presupuesto inicial
+- Agregar nuevos gastos
+- Editar gastos existentes (Swipe derecha)
+- Eliminar gastos (Swipe izquierda)
+- Validación para evitar exceder el presupuesto
+- Cálculo automático de:
+  - Presupuesto total
+  - Gastado
+  - Disponible
+- Botón funcional para resetear la aplicación
+- Persistencia de datos con localStorage
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tecnologías utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Vite
+- Context API
+- useReducer
+- Tailwind CSS
+- react-swipeable-list
+- react-date-picker
+
+---
+
+## Instalación local
+
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/luciaT1212/Guia_4_ContextAPI_y_Reducers.git
