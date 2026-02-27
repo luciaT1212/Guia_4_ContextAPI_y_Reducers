@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /*** SWIPE LIST OVERRIDES (Guía paso 34) ***/
 .swipeable-list-item__leading-actions,
