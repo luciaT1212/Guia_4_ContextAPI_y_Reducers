@@ -12,12 +12,8 @@ import {
 import "react-swipeable-list/dist/styles.css"
 
 export const ExpenseDetails = ({ expense }) => {
+  const categoryInfo = categories.find((cat) => cat.id === expense.category)
   const dispatch = useContext(BudgetDispatchContext)
-
-  const categoryInfo = categories.find((cat) => cat.id === expense.category) ?? {
-    name: "Sin categoría",
-    icon: "gastos",
-  }
 
   const leadingActions = () => (
     <LeadingActions>
@@ -43,6 +39,10 @@ export const ExpenseDetails = ({ expense }) => {
     </TrailingActions>
   )
 
+  const iconUrl = categoryInfo
+    ? `${import.meta.env.BASE_URL}icono_${categoryInfo.icon}.svg`
+    : ""
+
   return (
     <SwipeableList>
       <SwipeableListItem
@@ -51,19 +51,16 @@ export const ExpenseDetails = ({ expense }) => {
       >
         <div className="bg-white shadow-lg p-10 w-full border-b border-gray-200 flex gap-5 items-center">
           <div>
-            <img
-              src={`${import.meta.env.BASE_URL}icono_${categoryInfo.icon}.svg`}
-              alt="Icono gasto"
-              className="w-20"
-            />
+            {categoryInfo && (
+              <img src={iconUrl} alt="Icono gasto" className="w-20" />
+            )}
           </div>
 
           <div className="flex-1">
             <p className="text-sm font-bold uppercase text-slate-500">
-              {categoryInfo.name}
+              {categoryInfo?.name ?? "Categoría"}
             </p>
             <p>{expense.expenseName}</p>
-
             <p className="text-slate-600 text-sm">
               {expense.date
                 ? new Date(expense.date).toLocaleDateString("es-ES", {

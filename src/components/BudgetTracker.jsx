@@ -16,13 +16,12 @@ export const BudgetTracker = () => {
 
   const remainingBudget = state.budget - totalExpenses
 
+  const graficoUrl = `${import.meta.env.BASE_URL}grafico.jpg`
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
       <div className="flex justify-center">
-        <img
-          src={`${import.meta.env.BASE_URL}grafico.jpg`}
-          alt="grafico"
-        />
+        <img src={graficoUrl} alt="grafico" />
       </div>
 
       <div className="flex flex-col justify-center items-center gap-8">
