@@ -1,5 +1,8 @@
 import { useContext } from "react"
-import { BudgetDispatchContext, BudgetStateContext } from "../context/BudgetContext"
+import {
+  BudgetDispatchContext,
+  BudgetStateContext,
+} from "../context/BudgetContext"
 import { AmountDisplay } from "./AmountDisplay"
 
 export const BudgetTracker = () => {
@@ -16,7 +19,10 @@ export const BudgetTracker = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
       <div className="flex justify-center">
-        <img src="/grafico.jpg" alt="grafico" />
+        <img
+          src={`${import.meta.env.BASE_URL}grafico.jpg`}
+          alt="grafico"
+        />
       </div>
 
       <div className="flex flex-col justify-center items-center gap-8">

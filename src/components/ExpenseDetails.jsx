@@ -12,8 +12,12 @@ import {
 import "react-swipeable-list/dist/styles.css"
 
 export const ExpenseDetails = ({ expense }) => {
-  const categoryInfo = categories.find((cat) => cat.id === expense.category)
   const dispatch = useContext(BudgetDispatchContext)
+
+  const categoryInfo = categories.find((cat) => cat.id === expense.category) ?? {
+    name: "Sin categoría",
+    icon: "gastos",
+  }
 
   const leadingActions = () => (
     <LeadingActions>
@@ -48,7 +52,7 @@ export const ExpenseDetails = ({ expense }) => {
         <div className="bg-white shadow-lg p-10 w-full border-b border-gray-200 flex gap-5 items-center">
           <div>
             <img
-              src={`/icono_${categoryInfo.icon}.svg`}
+              src={`${import.meta.env.BASE_URL}icono_${categoryInfo.icon}.svg`}
               alt="Icono gasto"
               className="w-20"
             />
@@ -59,6 +63,7 @@ export const ExpenseDetails = ({ expense }) => {
               {categoryInfo.name}
             </p>
             <p>{expense.expenseName}</p>
+
             <p className="text-slate-600 text-sm">
               {expense.date
                 ? new Date(expense.date).toLocaleDateString("es-ES", {
